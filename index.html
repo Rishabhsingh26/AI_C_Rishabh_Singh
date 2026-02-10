@@ -2,61 +2,234 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>NovaTech</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechNova</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- ===== CSS ===== -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #333;
+        }
+
+        /* Navbar */
+        header {
+            background: #0f172a;
+            color: #fff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(135deg, #2563eb, #1e3a8a);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+
+        .hero button {
+            padding: 12px 30px;
+            border: none;
+            background: white;
+            color: #1e3a8a;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .hero button:hover {
+            background: #e5e7eb;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 16px;
+        }
+
+        /* Cards */
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Contact */
+        .contact input {
+            width: 260px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .contact button {
+            padding: 10px 25px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar">
-        <h2 class="logo">TechNova</h2>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <h1>NovaTech</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>Build Your Future With Tech</h1>
-        <p>We design modern websites and applications</p>
-        <button onclick="showAlert()">Get Started</button>
-    </section>
+    <!-- Hero -->
+    <div class="hero" id="home">
+        <h2>Build Modern Websites</h2>
+        <p>We create clean, responsive and professional websites using modern technologies.</p>
+        <button onclick="showMessage()">Get Started</button>
+    </div>
 
     <!-- Services -->
-    <section class="services" id="services">
+    <section id="services">
         <h2>Our Services</h2>
         <div class="cards">
-            <div class="card">Web Development</div>
-            <div class="card">App Development</div>
-            <div class="card">UI/UX Design</div>
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>Modern and responsive websites.</p>
+            </div>
+            <div class="card">
+                <h3>UI / UX Design</h3>
+                <p>User friendly and attractive designs.</p>
+            </div>
+            <div class="card">
+                <h3>Backend Integration</h3>
+                <p>API and database integration.</p>
+            </div>
         </div>
     </section>
 
     <!-- About -->
-    <section class="about" id="about">
+    <section id="about">
         <h2>About Us</h2>
         <p>
-            TechNova is a digital solutions company helping students and
-            businesses build scalable and modern applications.
+            NovaTech is a student-focused tech brand building high-quality
+            web projects for learning, portfolios and internships.
         </p>
     </section>
 
     <!-- Contact -->
     <section class="contact" id="contact">
         <h2>Contact Us</h2>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <button>Submit</button>
+        <input type="text" placeholder="Your Name"><br>
+        <input type="email" placeholder="Your Email"><br>
+        <button onclick="submitForm()">Submit</button>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>© 2026 TechNova. All rights reserved.</p>
+        <p>© 2026 NovaTech | All Rights Reserved</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- ===== JavaScript ===== -->
+    <script>
+        function showMessage() {
+            alert("Welcome to NovaTech 🚀");
+        }
+
+        function submitForm() {
+            alert("Thank you! We will contact you soon 😊");
+        }
+    </script>
+
 </body>
 </html>
